@@ -21,8 +21,7 @@ sentiment_analysis/
 │ ├── data_exploration.py # Data analysis and visualization
 │ ├── data_preprocessing.py # Dataset and preprocessing
 │ ├── train.py # Model training and evaluation
-│ └── inference.py # Prediction interface
-├── models/ # Saved models 
+│ └── inference.py # Prediction interface 
 ├──data/ #Data analysis
 └── requirements.txt # Python dependencies
 
