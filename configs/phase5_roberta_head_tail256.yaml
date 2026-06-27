@@ -1,0 +1,27 @@
+model:
+  name: models/pretrained/roberta-base
+  display_name: roberta-base
+  num_labels: 2
+
+data:
+  dataset_name: imdb
+  max_length: 256
+  truncation_strategy: head_tail
+  validation_size: 0.1
+  train_samples: null
+  validation_samples: null
+  test_samples: null
+
+training:
+  seed: 42
+  batch_size: 8
+  epochs: 3
+  learning_rate: 2.0e-5
+  weight_decay: 0.01
+  warmup_ratio: 0.1
+  num_workers: 0
+  best_metric: f1
+
+output:
+  output_dir: outputs/phase5/model_comparison/roberta_head_tail256/train
+  best_model_dir: models/phase5_roberta_head_tail256

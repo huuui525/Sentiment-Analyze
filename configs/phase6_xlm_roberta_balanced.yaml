@@ -1,0 +1,35 @@
+model:
+  name: xlm-roberta-base
+  display_name: xlm-roberta-base
+  num_labels: 2
+
+data:
+  dataset_format: local_parquet
+  dataset_name: phase6_multilingual_sentiment_balanced
+  data_dir: data/processed/phase6_multilingual_sentiment/balanced
+  max_length: 256
+  truncation_strategy: head_tail
+  validation_size: 0.1
+  train_samples:
+  validation_samples:
+  test_samples:
+
+training:
+  seed: 42
+  batch_size: 8
+  epochs: 3
+  learning_rate: 2.0e-5
+  weight_decay: 0.01
+  warmup_ratio: 0.1
+  num_workers: 0
+  mixed_precision: true
+  best_metric: f1
+  early_stopping:
+    enabled: true
+    min_delta: 0.002
+    patience: 1
+    min_epochs: 2
+
+output:
+  output_dir: outputs/phase6/xlm_roberta_balanced/train
+  best_model_dir: models/phase6_xlm_roberta_balanced
